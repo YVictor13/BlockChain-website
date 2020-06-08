@@ -1,0 +1,97 @@
+.myContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 850px;
+    margin-top: -25px;
+    font-family: "PingFang SC", "Microsoft YaHei UI", sans-serif;
+    color: white;
+    background-color:rgb(34, 34,34);
+}
+
+.left {
+    width: 17%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    border: 2px solid #000000;
+    background-color: rgb(34, 34, 34);
+    align-items: center;
+}
+
+.encryption {
+    width: 39%;
+    height: 28px;
+    margin-top: 58px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    background-color: #00BFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.decode {
+    width: 39%;
+    height: 28px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #00BFFF;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.right {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right form {
+    text-align: center;
+    margin-left: 10%;
+    margin-top: 10px;
+}
+
+.mySubmit {
+    margin-top: 13px;
+    border: 2px solid #00BFFF;
+    background-color: #00BFFF;
+    border-radius: 10px;
+    color: white;
+    width: 80px;
+    height: 30px;
+    margin-left: -100px;
+}
+
+.myActive {
+    background-color: #005ce6;
+}
+
+.isDisplay {
+    display: none;
+}
+
+.right-table {
+    margin-top: -39%;
+    width: 70%;
+    height: auto;
+}
+
+.style {
+    margin-top: -20px;
+}
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关于我们</title>
+    <link rel="stylesheet" href="../static/css/animate.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/media-queries.css">
+    <link rel="stylesheet" href="../static/css/slit-slider.css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.css">
+    <link rel="stylesheet" href="../static/css/component.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+</head>
+<body>
+<div style="    background-color: rgba(34,34,34,0.9);
+    width: 100%;
+    height: 1000px;font-family:'PingFang SC', 'Microsoft YaHei UI', sans-serif;background-image: url('../static/images/bc_about.jpg');">
+
+    <header id="navigation" class="navbar navbar-inverse" style="z-index: 100;width: 100%">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ url_for('home') }}">
+                    <h1 id="logo" class="current">Hiddenmark</h1>
+                </a>
+            </div>
+            <nav class="collapse navbar-collapse navbar-right" role="Navigation">
+                <ul id="nav" class="nav navbar-nav">
+                    <li ><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('picture') }}">Picture</a></li>
+                    <li><a href="{{ url_for('audio') }}">Audio</a></li>
+                    <li><a href="{{ url_for('video') }}">Video</a></li>
+                     <li><a href="{{ url_for('table') }}">All</a></li>
+                    <li><a href="{{ url_for('index') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="title text-center wow fadeIn animated" data-wow-duration="1500ms"
+                 style="visibility: visible; animation-duration: 1500ms; animation-name: fadeIn;">
+                <h2 style="color: #6cb670;">About <span>Us</span></h2>
+                <text style="color:white">Protect your rights</text>
+                <br>
+                <text style="color:white">A platform focusing on digital copyright protection</text>
+                <div class="border"></div>
+            </div>
+            <div class="col-md-4 text-center wow fadeInUp animated" data-wow-duration="500ms"
+                 style="visibility: visible; animation-duration: 500ms; animation-name: fadeInUp;">
+                <div class="wrap-about">
+                    <div class="icon-box">
+                        <i class="fa fa-desktop fa-4x" style="color:white"></i>
+                    </div>
+
+                    <div class="about-content text-center" style="color:white">
+                        <h3 class="ddd">Many kinds</h3>
+                        <p>We support the copyright protection of three types of digital works: picture, audio and
+                            video,
+                            and provide protection for your original rights and interests from multiple perspectives and
+                            channels</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="500ms"
+                 style="visibility: visible; animation-duration: 500ms; animation-delay: 500ms; animation-name: fadeInUp;">
+                <div class="wrap-about kill-margin-bottom">
+                    <div class="icon-box">
+                        <i class="fa fa-link fa-4x" style="color:white"></i>
+                    </div>
+
+                    <div class="about-content text-center" style="color:white">
+                        <h3>High confidentiality</h3>
+                        <p>Our watermarks are invisible and can resist multiple interferences.At the same time, it is
+                            difficult for others to remove watermarks and provide you with high security watermark
+                            services</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="250ms"
+                 style="visibility: visible; animation-duration: 500ms; animation-delay: 250ms; animation-name: fadeInUp;">
+                <div class="wrap-about">
+                    <div class="icon-box">
+                        <i class="fa fa-users fa-4x" style="color:white"></i>
+                    </div>
+                    <div class="about-content text-center" style="color:white">
+                        <h3>Professional team</h3>
+                        <p>We have excellent designers, professional front-end and back-end technicians to serve you all
+                            the
+                            way</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

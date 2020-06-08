@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>登录\注册</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+<div class="content"  style="font-family:'PingFang SC', 'Microsoft YaHei UI', sans-serif;">
+    <div class="form sign-in">
+        <h2>Welcome Back</h2>
+        <label>
+            <span>EMAIL</span>
+            <input type="email"/>
+        </label>
+        <label>
+            <span>PASSWORD</span>
+            <input type="password"/>
+        </label>
+        <p class="forgot-pass"><a href="javascript:">Forget?</a></p>
+        <button type="button" class="submit" onclick="window.location.href = 'http://localhost:5000/home'">LOGIN
+        </button>
+        <button type="button" class="fb-btn">Login with <span>facebook</span> account</button>
+    </div>
+    <div class="sub-cont">
+        <div class="img">
+            <div class="img__text m--up">
+                <h2>Not registered yet?</h2>
+                <p>Register Now</p>
+            </div>
+            <div class="img__text m--in">
+                <h2>Already have an account?</h2>
+                <p>Login if you have an account. Long time no see!</p>
+            </div>
+            <div class="img__btn">
+                <span class="m--up">REGISTER</span>
+                <span class="m--in">LOGIN</span>
+            </div>
+        </div>
+        <div class="form sign-up">
+            <h2>Register Now</h2>
+            <label>
+                <span>USERNAME</span>
+                <input type="text"/>
+            </label>
+            <label>
+                <span>EMAIL</span>
+                <input type="email"/>
+            </label>
+            <label>
+                <span>PASSWORD</span>
+                <input type="password"/>
+            </label>
+            <button type="button" class="submit">REGISTER</button>
+            <button type="button" class="fb-btn">Login with <span> facebook</span>account</button>
+        </div>
+    </div>
+</div>
+
+<script src="../static/js/script.js"></script>
+
+<div style="text-align:center;">
+</div>
+</body>
+
+</html>

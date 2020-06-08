@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+    <link rel="stylesheet" href="../static/css/animate.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/media-queries.css">
+    <link rel="stylesheet" href="../static/css/slit-slider.css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.css">
+    <link rel="stylesheet" href="../static/css/component.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/css/picture.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+</head>
+<body>
+<div style="color: white;background-color: rgb(34,34,34);width:100%;height: 1000px;">
+    <header id="navigation" class="navbar navbar-inverse" style="z-index: 100;width: 100%">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ url_for('about') }}">
+                    <h1 id="logo">Hiddenmark</h1>
+                </a>
+            </div>
+            <nav class="collapse navbar-collapse navbar-right" role="Navigation">
+                <ul id="nav" class="nav navbar-nav">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('picture') }}">Picture</a></li>
+                    <li><a href="{{ url_for('audio') }}">Audio</a></li>
+                    <li><a href="{{ url_for('video') }}">Video</a></li>
+                    <li class="current"><a href="{{ url_for('table') }}">All</a></li>
+                    <li><a href="{{ url_for('index') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <table class="table table-striped style">
+        <tr style="background-color: #000;">
+            <th>previous_hash</th>
+            <th>username</th>
+            <th>type</th>
+            <th>hmsg</th>
+            <th>time_stamp</th>
+            <th>hash</th>
+        </tr>
+        {% for item in obj_list %}
+        <tr style="background-color: #000;">
+            <td>{{item.previousHash}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.type}}</td>
+            <td>{{ item.hmsg }}</td>
+            <td>{{ item.time_stamp }}</td>
+            <td>{{ item.hash }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+</body>
+</html>

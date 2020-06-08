@@ -1,0 +1,453 @@
+@media (min-width: 980px) and (max-width: 1150px) {
+    .parallax-section {
+        background-position: center top !important
+    }
+
+    #slitSlider .carousel-caption h2 {
+        font-size: 60px
+    }
+
+    .feature-desc h3 {
+        margin-top: 0
+    }
+
+    .team-mate {
+        margin-bottom: 30px
+    }
+
+    .mask ul {
+        top: 85px
+    }
+
+    .mask ul li {
+        margin: 0 5px
+    }
+
+    .team-mate > h4 {
+        margin-bottom: 10px
+    }
+
+    .team-mate img {
+        margin: 0 auto
+    }
+
+    .member-info ul li {
+        margin-right: 10px
+    }
+
+    .client-info {
+        width: 55%
+    }
+
+    .tab-post-nav li a {
+        padding: 15px 8px
+    }
+
+    .author-bio h5 {
+        margin-left: 70px
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .parallax-section {
+        background-position: center top !important
+    }
+
+    #slitSlider .carousel-caption h2 {
+        font-size: 50px
+    }
+
+    #nav-dots {
+        display: block
+    }
+
+    #nav-arrows {
+        display: none
+    }
+
+    .navbar-inverse .navbar-nav li a {
+        padding: 20px 10px
+    }
+
+    .wrap-about {
+        margin: 0 0 75px
+    }
+
+    .about-content {
+        margin: 0 auto;
+        width: 60%
+    }
+
+    #counter {
+        padding-bottom: 50px
+    }
+
+    .counters-item {
+        margin-bottom: 30px
+    }
+
+    .service-block {
+        margin: 0 auto 40px;
+        width: 310px
+    }
+
+    .team-mate {
+        margin: 0 auto 30px;
+        width: 280px
+    }
+
+    .skill-chart {
+        margin: 0 auto 40px;
+        width: 300px
+    }
+
+    .skill-chart {
+        margin: 0 auto 40px;
+        width: 90%
+    }
+
+    .skill-chart > h3 {
+        margin: 15px 0
+    }
+
+    .pricing {
+        margin: 0 auto 30px;
+        width: 300px
+    }
+
+    .client-info {
+        width: 75%
+    }
+
+    .note {
+        margin-bottom: 30px
+    }
+
+    .tab-post-nav li a {
+        padding: 10px
+    }
+
+    .author-social {
+        margin-left: 0
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .parallax-section {
+        background-position: center top !important
+    }
+
+    h1 {
+        font-size: 30px
+    }
+
+    .carousel-caption img {
+        width: 70%
+    }
+
+    #slitSlider .carousel-caption h2 {
+        font-size: 24px;
+        letter-spacing: .5px;
+        line-height: 35px;
+        margin-bottom: 25px
+    }
+
+    #slitSlider .carousel-caption h3 {
+        font-size: 20px;
+        letter-spacing: .5px;
+        line-height: 28px;
+        margin-bottom: 25px
+    }
+
+    #slitSlider .carousel-caption a {
+        font-size: 14px
+    }
+
+    #nav-dots {
+        display: block
+    }
+
+    #nav-arrows {
+        display: none
+    }
+
+    .navbar-fixed-top {
+        padding-bottom: 10px
+    }
+
+    .navbar-inverse .navbar-toggle,
+    .navbar-inverse .navbar-toggle .icon-bar {
+        border-color: #4e595f;
+        border-radius: 0
+    }
+
+    .navbar-inverse .navbar-toggle:hover {
+        border-color: #ddd;
+        border-radius: 0
+    }
+
+    .navbar-inverse .navbar-toggle .icon-bar:hover {
+        background-color: #ddd
+    }
+
+    .navbar-collapse.in {
+        overflow-y: inherit
+    }
+
+    .navbar-brand {
+        padding: 10px 0 10px 10px
+    }
+
+    .navbar-toggle {
+        margin-top: 22px
+    }
+
+    .navbar-nav {
+        margin: 0 -15px
+    }
+
+    .navbar-inverse .navbar-nav li a {
+        line-height: 45px;
+        padding: 0;
+        text-align: center;
+        border-bottom: 1px solid transparent
+    }
+
+    .wrap-about {
+        margin: 0 auto 80px;
+        width: 85%
+    }
+
+    .feature-desc a {
+        margin: 5px 5px 5px 0
+    }
+
+    .counters-item {
+        margin: 0 auto 25px;
+        width: 270px
+    }
+
+    #services .title {
+        padding-bottom: 60px
+    }
+
+    .service-block {
+        margin: 0 auto 30px;
+        width: 280px;
+        position: relative;
+        left: -8px
+    }
+
+    .skill-chart {
+        margin: 0 auto 40px;
+        width: 280px
+    }
+
+    .team-mate {
+        margin: 0 auto 31px;
+        width: 280px
+    }
+
+    .team-mate img {
+        margin: 0 auto
+    }
+
+    .member-info ul {
+        text-align: center;
+        margin-bottom: 10px
+    }
+
+    .pricing {
+        margin: 0 auto 20px;
+        width: 280px
+    }
+
+    .portfolio-filter ul li a {
+        margin: 0 10px 10px 0;
+        padding: 5px 10px
+    }
+
+    .sub-title h3 {
+        font-size: 18px
+    }
+
+    .client-info {
+        width: 100%
+    }
+
+    #blog {
+        padding-bottom: 0
+    }
+
+    .note {
+        margin-bottom: 30px
+    }
+
+    .note .excerpt {
+        padding: 0 20px 20px
+    }
+
+    .all-post {
+        margin: 20px 0 30px
+    }
+
+    .contact-info {
+        margin: 0 0 30px
+    }
+
+    #map-canvas {
+        height: 250px
+    }
+
+    .social-icon ul li,
+    .social-icon ul li:first-child {
+        margin: 15px
+    }
+
+    .social-icon ul li a {
+        width: 50px;
+        height: 50px
+    }
+
+    .social-icon ul li a i {
+        font-size: 24px;
+        line-height: 50px
+    }
+
+    .blog-title h1 {
+        font-size: 28px
+    }
+
+    #blog-page {
+        margin: 0
+    }
+
+    #blog-posts {
+        margin: 0 0 40px
+    }
+
+    .post-excerpt h3 {
+        font-size: 20px
+    }
+
+    .post-pagination ul li {
+        margin: 0 10px 10px 0
+    }
+
+    .tab-post-nav li a {
+        padding: 8px 5px
+    }
+
+    .author-social {
+        margin-left: 0
+    }
+
+    .author-avatar {
+        margin-right: 10px
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    #slitSlider .carousel-caption h2 {
+        font-size: 30px
+    }
+
+    #slitSlider .carousel-caption h3 {
+        font-size: 25px
+    }
+
+    #slitSlider .carousel-caption a {
+        font-size: 14px
+    }
+
+    .carousel-caption img {
+        width: 50%
+    }
+
+    .navbar-fixed-top {
+        padding-bottom: 10px
+    }
+
+    .navbar-brand {
+        padding: 10px 0 10px 10px
+    }
+
+    .navbar-inverse .navbar-toggle {
+        border-color: #6cb670;
+        border-radius: 0
+    }
+
+    .navbar-inverse .navbar-toggle:hover {
+        border-color: #fff;
+        border-radius: 0
+    }
+
+    .navbar-collapse.in {
+        overflow-y: inherit
+    }
+
+    .navbar-toggle {
+        margin-top: 22px
+    }
+
+    .navbar-inverse .navbar-nav li a {
+        line-height: 45px;
+        padding: 0;
+        text-align: center;
+        border-bottom: 2px solid transparent
+    }
+
+    .wrap-about {
+        margin: 0 auto 75px;
+        width: 70%
+    }
+
+    .service-block {
+        margin: 0 auto 40px;
+        width: 310px
+    }
+
+    .team-mate {
+        margin: 0 auto 30px;
+        width: 280px
+    }
+
+    .team-mate img {
+        margin: 0 auto
+    }
+
+    .og-grid li {
+        width: 245px
+    }
+
+    .skill-chart {
+        margin: 0 auto 40px;
+        width: 300px
+    }
+
+    .pricing {
+        margin: 0 auto 30px;
+        width: 350px
+    }
+
+    .client-info {
+        width: 74%
+    }
+
+    #blog {
+        padding-bottom: 0
+    }
+
+    .note {
+        margin: 0 auto 30px;
+        width: 75%
+    }
+
+    .contact-info {
+        width: 100%
+    }
+
+    .tab-post-nav li a {
+        padding: 10px 15px
+    }
+}

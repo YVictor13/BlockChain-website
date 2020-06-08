@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PingFang SC", "Microsoft YaHei UI", sans-serif;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.image-slider {
+    width: 100vh;
+    height: 100vh;
+    padding: 0;
+    margin: -26px 0 0 0;
+}
+
+.image-slider .home-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all linear 0.8s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-slider .home-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.image-slider .home-slide .home-content {
+    position: absolute;
+    z-index: 10;
+    color: white;
+    opacity:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: auto;
+}
+
+
+
+.image-slider .home-slide .home-content h1 {
+    margin-bottom: 24px;
+}
+
+.image-slider .home-slide .home-content button{
+    margin-top: 24px;
+    width:80px;
+    height:25px;
+    border:2px solid #91ffa8;
+    border-radius: 5px;
+    color: white;
+    background-color: #91ffa8;
+}
+
+#prev, #next {
+    position: absolute;
+    z-index: 110;
+    width: 80px;
+    height: 80px;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+
+    top: calc(50% - 24px);
+    left: 50px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+#next {
+    left: unset;
+    right: 50px;
+}
+
+.image-slider .home-slide {
+    opacity: 0;
+}
+
+.image-slider .home-slide.current {
+    opacity: 1;
+}
+
+
+.image-slider .home-slide .home-content {
+    opacity: 0;
+    transform: translateY(500px);
+}
+
+.image-slider .home-slide.current .home-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s ease-in-out 0.4s;
+}
+
+#prev:hover, #next:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+}
+
+@media screen and (max-width: 960px) {
+    .image-slider .home-slide .home-content {
+        width: 100%;
+    }
+
+    #prev, #next {
+        font-size: 24px;
+        left: 24px;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        top: 40%;
+    }
+
+    #next {
+        left: unset;
+        right: 24px;
+    }
+}
+
+
