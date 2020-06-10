@@ -48,41 +48,46 @@
     </div>
     <div class="myContainer" style="margin-top: -20px">
         <div class="left">
-            <div class="encryption myActive" id="encryption">encryption</div>
-            <div class="decode" id="decode">decode</div>
+            <div class="encryption myActive" id="encryption">UpLoad</div>
+            <div class="decode" id="decode">DownLoad</div>
         </div>
         <div class="right" id="right">
-            <h1>Audio watermark</h1>
+            <h1 style=" margin-top: -250px;margin-bottom: 10px;">Audio watermark</h1>
             <text>Make your audio unique</text>
             <form method="post" action="http://localhost:5000/audio" enctype="multipart/form-data">
                 <input type="file" size="30" name="audio"/>
                 <br>
-                <input type="text" name="name" style="margin-top:0px;margin-left: -100px;" placeholder="加密密码"/>
+                <input type="text" name="password" style="margin-top:0px;margin-left: -100px;" placeholder="加密密码"/>
                 <br>
                 <input type="submit" value="Let's Go" class="mySubmit"/>
             </form>
         </div>
         <div class="right-table isDisplay" id="right-table">
             <table class="table table-striped" style="word-break:break-all">
-            <tr style="background-color: #000;">
-                <th>previous_hash</th>
-                <th>username</th>
-                <th>hmsg</th>
-                <th>time_stamp</th>
-                <th>hash</th>
-                <th>download</th>
-            </tr>
-            {% for item in obj_list%}
                 <tr style="background-color: #000;">
-                      <td>{{ item.previous_hash }}</td>
+                    <th>previous_hash</th>
+                    <th>username</th>
+                    <th>hmsg</th>
+                    <th>time_stamp</th>
+                    <th>hash</th>
+                    <th>encryption</th>
+                    <th>decode</th>
+                </tr>
+                {% for item in obj_list %}
+                    <tr style="background-color: #000;">
+                        <td>{{ item.previous_hash }}</td>
                         <td>{{ item.username }}</td>
                         <td>{{ item.hmsg }}</td>
                         <td>{{ item.time_stamp }}</td>
                         <td>{{ item.hash }}</td>
-                    <td><a href="{{ url_for('down_audio',filename=item.filename) }}">{{ item.filename }}</a></td>
-                </tr>
-            {% endfor %}
-        </table>
+                        <td>
+                            <a href="{{ url_for('down_audio_encryption',filename= item.filename) }}">{{ item.filename }}</a>
+                        </td>
+                        <td><a href="{{ url_for('down_audio_decode',filename= item.filename) }}">{{ item.filename }}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
             </table>
         </div>
         <div class="footer" style="margin-top: 200px;">

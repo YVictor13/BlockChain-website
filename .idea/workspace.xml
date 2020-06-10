@@ -2,48 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfe25723-0f83-41b0-9678-dba1ec3d0160" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockAPI/music/mdecode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockAPI/music/mencode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockAPI/picture/pdecode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockAPI/picture/pencode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockAPI/video/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockAPI/video/vdecode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockAPI/video/vencode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockAPI/video/watermark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockAPI/work.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/background-image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/register.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Demo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/BlockChain2.py" beforeDir="false" afterPath="$PROJECT_DIR$/BlockChain2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/SM2.py" beforeDir="false" afterPath="$PROJECT_DIR$/SM2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/SM3.py" beforeDir="false" afterPath="$PROJECT_DIR$/SM3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/decode_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockAPI/API/decode_music.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/decode_picture.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockAPI/API/decode_picture.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/decode_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockAPI/API/decode_video.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/encode_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockAPI/API/encode_music.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/encode_picture.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockAPI/API/encode_picture.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/encode_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockAPI/API/encode_video.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/mystyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/picture.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/picture.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/audio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/audio.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/picture.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/picture.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/table.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/video.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/2020060817224209.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/2020060817234874.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/2020060818174905.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadAudio/2020060812033970.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/blockAPI/API/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadAudio/2020060818255053.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/blockAPI/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadAudio/2020060818343519.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/blockAPI/music/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadVideo/2020060811412633.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/blockAPI/picture/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadVideo/2020060812065178.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/blockAPI/video/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +272,8 @@
       <workItem from="1591629495404" duration="2049000" />
       <workItem from="1591746151029" duration="4686000" />
       <workItem from="1591750890099" duration="2013000" />
-      <workItem from="1591752932306" duration="7432000" />
+      <workItem from="1591752932306" duration="7855000" />
+      <workItem from="1591761456092" duration="7617000" />
     </task>
     <servers />
   </component>
@@ -333,22 +301,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="165" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591500776607" />
-    <state width="1493" height="105" key="GridCell.Tab.0.bottom" timestamp="1591760581776">
+    <state width="1493" height="6" key="GridCell.Tab.0.bottom" timestamp="1591773006120">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="105" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591760581776" />
-    <state width="1493" height="105" key="GridCell.Tab.0.center" timestamp="1591760581776">
+    <state width="1493" height="6" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591773006120" />
+    <state width="1493" height="6" key="GridCell.Tab.0.center" timestamp="1591773006120">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="105" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591760581776" />
-    <state width="1493" height="105" key="GridCell.Tab.0.left" timestamp="1591760581776">
+    <state width="1493" height="6" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591773006120" />
+    <state width="1493" height="6" key="GridCell.Tab.0.left" timestamp="1591773006120">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="105" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591760581776" />
-    <state width="1493" height="105" key="GridCell.Tab.0.right" timestamp="1591760581776">
+    <state width="1493" height="6" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591773006120" />
+    <state width="1493" height="6" key="GridCell.Tab.0.right" timestamp="1591773006120">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="105" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591760581776" />
+    <state width="1493" height="6" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591773006120" />
     <state width="1493" height="349" key="GridCell.Tab.1.bottom" timestamp="1591750016539">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -381,14 +349,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1591614183617" />
-    <state x="430" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1591753159281">
+    <state x="430" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1591761456542">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="430" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1591753159281" />
-    <state x="46" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1591602854688">
+    <state x="430" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1591761456542" />
+    <state x="46" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1591767940252">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="46" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1591602854688" />
+    <state x="46" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1591767940252" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -411,7 +379,7 @@
     <SUITE FILE_PATH="coverage/Demo$SM3.coverage" NAME="SM3 Coverage Results" MODIFIED="1591626448619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/API" />
     <SUITE FILE_PATH="coverage/Demo$encode_picture.coverage" NAME="encode_picture Coverage Results" MODIFIED="1591607902024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/API" />
     <SUITE FILE_PATH="coverage/Demo$text.coverage" NAME="text Coverage Results" MODIFIED="1591749935915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/blockAPI/API" />
-    <SUITE FILE_PATH="coverage/Demo$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1591759686656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Demo$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1591773006109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Demo$BlockChain2__1_.coverage" NAME="BlockChain2 (1) Coverage Results" MODIFIED="1591749993207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/blockAPI" />
     <SUITE FILE_PATH="coverage/Demo$work.coverage" NAME="work Coverage Results" MODIFIED="1591757379375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/blockAPI" />
     <SUITE FILE_PATH="coverage/Demo$Demo.coverage" NAME="Demo Coverage Results" MODIFIED="1591598914246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

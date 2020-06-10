@@ -46,7 +46,6 @@
     <table class="table table-striped style" style="word-break:break-all">
         <tr style="background-color: #000;">
             <th>previous_hash</th>
-            <th>username</th>
             <th>type</th>
             <th>hmsg</th>
             <th>time_stamp</th>
@@ -55,12 +54,10 @@
         {% for item in obj_list %}
             <tr style="background-color: #000;">
                 <td>{{ item.previousHash }}</td>
-                <td>{{ item.username }}</td>
                 <td>{{ item.type }}</td>
                 <td>{{ item.hmsg }}</td>
                 <td>{{ item.time_stamp }}</td>
                 <td>{{ item.hash }}</td>
-                <td>{{ item.filename }}</td>
             </tr>
         {% endfor %}
     </table>

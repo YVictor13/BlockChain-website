@@ -48,16 +48,16 @@
     </div>
     <div class="myContainer" style="margin-top:-20px;">
         <div class="left">
-            <div class="encryption myActive" id="encryption">encryption</div>
-            <div class="decode" id="decode">decode</div>
+            <div class="encryption myActive" id="encryption">UpLoad</div>
+            <div class="decode" id="decode">DownLoad</div>
         </div>
         <div class="right" id="right">
-            <h1>Image watermark</h1>
+            <h1 style=" margin-top: -250px;margin-bottom: 10px;">Image watermark</h1>
             <text>Add a layer of dark net to your image</text>
             <form method="post" action="http://localhost:5000/picture" enctype="multipart/form-data">
                 <input type="file" size="30" name="photo"/>
                 <br>
-                <input type="text" name="name" style="margin-top:0px;margin-left: -100px;" placeholder="加密密码"/>
+                <input type="text" name="password" style="margin-top:0px;margin-left: -100px;" placeholder="加密密码"/>
                 <br>
                 <input type="submit" value="Let's Go" class="mySubmit"/>
             </form>
@@ -71,7 +71,8 @@
                     <th>hmsg</th>
                     <th>time_stamp</th>
                     <th>hash</th>
-                    <th>download</th>
+                    <th>encryption</th>
+                    <th>decode</th>
                 </tr>
                 {% for item in obj_list %}
                     <tr style="background-color: #000;">
@@ -80,7 +81,8 @@
                         <td>{{ item.hmsg }}</td>
                         <td>{{ item.time_stamp }}</td>
                         <td>{{ item.hash }}</td>
-                        <td><a href="{{ url_for('download',filename= item.filename) }}">{{ item.filename }}</a></td>
+                        <td><a href="{{ url_for('download_encryption',filename= item.filename) }}">{{ item.filename }}</a></td>
+                        <td><a href="{{ url_for('download_decode',filename= item.filename) }}">{{ item.filename }}</a></td>
                     </tr>
                 {% endfor %}
             </table>

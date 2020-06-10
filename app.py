@@ -76,6 +76,18 @@ UPLOAD_FOLDER2 = 'uploadAudio'
 app.config['UPLOAD_FOLDER2'] = UPLOAD_FOLDER2
 ALLOWED_EXTENSIONS2 = set(['cd', 'wave', 'aiff', 'mpeg', 'mp3', 'midi', 'wma', 'vqf', 'amr', 'ape'])
 
+# 清空文件夹的方法
+'''
+    如果文件夹不存在就创建，如果文件存在就清空！
+    :param filepath:需要创建的文件夹路径
+    :return:
+    '''
+# if not os.path.exists(filepath):
+#     os.mkdir(filepath)
+# else:
+#     shutil.rmtree(filepath)
+#     os.mkdir(filepath)
+
 
 def allowed_audio(filename):
     return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS2
@@ -88,23 +100,22 @@ def picture():
     return render_template('picture.html', obj_list=obj_list)
 
 
-# {{url_for('download',filename=filename)}}
-# 上传文件
+# 上传照片
 @app.route('/picture', methods=['POST'], strict_slashes=False)
 def api_upload():
     file_dir = os.path.join(basedir, app.config['UPLOAD_FOLDER'])
     if not os.path.exists(file_dir):
         os.makedirs(file_dir)
     f = request.files['photo']
+    # 获取前端传递过来的密码
+    password = request.form['password']
+    session['password'] = password
     if f and allowed_file(f.filename):
         fname = secure_filename(f.filename)
         # 输出文件的地址
         print(fname)
         ext = fname.rsplit('.', 1)[1]
         new_filename = Pic_str().create_uuid() + '.' + ext
-        # 对图片进行加水印处理
-        #     这里是需要你们进行加水印的地方，本地处理，无需上传到前端
-        # 处理结束
         print(new_filename)
         if len(c.list) == 0:
             c.add_block(Block('MoYu', 'three', 'picture', '0', new_filename))
@@ -118,13 +129,35 @@ def api_upload():
         return redirect('/picture')
 
 
+# 加水印
 @app.route('/picture/<string:filename>', methods=['GET'])
-def download(filename):
+def download_encryption(filename):
     if request.method == "GET":
+        # 1、获取upload文件夹中的图片文件
         if os.path.isfile(os.path.join('upload', filename)):
-            # 对获取的图片进行解水印处理
-            #     在下载之前先将文件去水印
-            # 处理结束
+            # 获取密码    password = session.get('password')        (可以内置密码)
+
+            # 2、对获取到的文件进行加水印操作
+            # 3、清空cache文件夹中的所有文件
+            # 4、将加水印后的文件缓存到cache文件夹中
+            # 5、获取cache中的文件（将在表达式中的upload改为cache）
+            # 6、进行下载操作
+            return send_from_directory('upload', filename, as_attachment=True)
+        pass
+
+
+@app.route('/picture/<string:filename>', methods=['GET'])
+def download_decode(filename):
+    if request.method == "GET":
+        # 1、获取upload文件夹中的图片文件
+        if os.path.isfile(os.path.join('upload', filename)):
+            # 获取密码    password = session.get('password')        (可以内置密码)
+
+            # 2、对获取到的文件进行去水印操作
+            # 3、清空cache文件夹中的所有文件
+            # 4、将去水印后的文件缓存到cache文件夹中
+            # 5、获取cache中的文件（将在表达式中的upload改为cache）
+            # 6、进行下载操作
             return send_from_directory('upload', filename, as_attachment=True)
         pass
 
@@ -143,16 +176,14 @@ def up_audio():
     if not os.path.exists(file_dir):
         os.makedirs(file_dir)
     f = request.files['audio']
+    # 获取前端传递过来的密码
+    password = request.form['password']
+    session['password'] = password
     if f and allowed_audio(f.filename):
         fname = secure_filename(f.filename)
         print(fname)
         ext = fname.rsplit('.', 1)[1]
         new_filename = Pic_str().create_uuid() + '.' + ext
-        # 对音频进行加水印处理
-
-        # 处理结束
-
-        # 音频进行上链处理，并将数据传到数据库
         if len(c.list) == 0:
             c.add_block(Block('MoYu', 'three', 'audio', '0', new_filename))
         else:
@@ -167,12 +198,33 @@ def up_audio():
 
 
 @app.route('/audio/<string:filename>', methods=['GET'])
-def down_audio(filename):
+def down_audio_encryption(filename):
     if request.method == "GET":
+        # 1、获取uploadAudio文件夹中的音频文件
         if os.path.isfile(os.path.join('uploadAudio', filename)):
-            # 对音频进行解水印处理
+            # 获取密码    password = session.get('password')        (可以内置密码)
 
-            # 处理结束
+            # 2、对获取到的文件进行加水印操作
+            # 3、清空cache文件夹中的所有文件
+            # 4、将加水印后的文件缓存到cache文件夹中
+            # 5、获取cache中的文件（将在表达式中的uploadAudio改为cache）
+            # 6、进行下载操作
+            return send_from_directory('uploadAudio', filename, as_attachment=True)
+        pass
+
+
+@app.route('/audio/<string:filename>', methods=['GET'])
+def down_audio_decode(filename):
+    if request.method == "GET":
+        # 1、获取uploadAudio文件夹中的音频文件
+        if os.path.isfile(os.path.join('uploadAudio', filename)):
+            # 获取密码    password = session.get('password')        (可以内置密码)
+
+            # 2、对获取到的文件进行去水印操作
+            # 3、清空cache文件夹中的所有文件
+            # 4、将去水印后的文件缓存到cache文件夹中
+            # 5、获取cache中的文件（将在表达式中的uploadAudio改为cache）
+            # 6、进行下载操作
             return send_from_directory('uploadAudio', filename, as_attachment=True)
         pass
 
@@ -191,15 +243,14 @@ def up_video():
     if not os.path.exists(file_dir):
         os.makedirs(file_dir)
     f = request.files['video']
+    # 获取前端传递过来的密码
+    password = request.form['password']
+    session['password'] = password
     if f and allowed_video(f.filename):
         fname = secure_filename(f.filename)
         print(fname)
         ext = fname.rsplit('.', 1)[1]
         new_filename = Pic_str().create_uuid() + '.' + ext
-        # 对视频进行加水印处理
-
-        # 处理结束
-
         # 视频进行上链处理，并将数据传到数据库
         if len(c.list) == 0:
             c.add_block(Block('MoYu', 'three', 'video', '0', new_filename))
@@ -214,12 +265,33 @@ def up_video():
 
 
 @app.route('/video/<string:filename>', methods=['GET'])
-def down_video(filename):
+def down_video_encryption(filename):
     if request.method == "GET":
+        # 1、获取uploadVideo文件夹中的视频文件
         if os.path.isfile(os.path.join('uploadVideo', filename)):
-            # 对视频进行解水印处理
+            # 获取密码    password = session.get('password')        (可以内置密码)
 
-            # 处理结束
+            # 2、对获取到的文件进行加水印操作
+            # 3、清空cache文件夹中的所有文件
+            # 4、将加水印后的文件缓存到cache文件夹中
+            # 5、获取cache中的文件（将在表达式中的uploadVideo改为cache）
+            # 6、进行下载操作
+            return send_from_directory('uploadVideo', filename, as_attachment=True)
+        pass
+
+
+@app.route('/video/<string:filename>', methods=['GET'])
+def down_video_decode(filename):
+    if request.method == "GET":
+        # 1、获取uploadVideo文件夹中的视频文件
+        if os.path.isfile(os.path.join('uploadVideo', filename)):
+            # 获取密码    password = session.get('password')        (可以内置密码)
+
+            # 2、对获取到的文件进行去水印操作
+            # 3、清空cache文件夹中的所有文件
+            # 4、将去水印后的文件缓存到cache文件夹中
+            # 5、获取cache中的文件（将在表达式中的uploadVideo改为cache）
+            # 6、进行下载操作
             return send_from_directory('uploadVideo', filename, as_attachment=True)
         pass
 
