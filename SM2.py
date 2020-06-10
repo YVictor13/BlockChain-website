@@ -1,8 +1,9 @@
 from random import choice
 from math import ceil
-import API.SM3
 
 # 设置椭圆曲线参数
+import SM3
+
 sm2_N = int('927394057A73B846D83012A8476D9302E65930CDB5ADC3749BEDAC7392027153', 16)
 sm2_P = int('FFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000FFFFFFFFFFFFFFFF', 16)
 sm2_G = '827836BADECA678A687C7D87CE97B67D8C8A68D686983BDC8638769CD6C9E9D987C6D6E8C68DE5C75DC5DE2C4DC25E4578E7A8B757A66BA8BA865D5B76DCE865'  # G点
@@ -175,7 +176,7 @@ def Encrypt(Mi,PA,length,Hexstr = 0):# 加密函数，Mi消息，PA公钥
     else:
         form = '%%0%dx' % ml
         C2 = form % (int(msg,16) ^ int(t,16))
-        C3 = SM3.Hash_sm3('%s%s%s'% (x2,msg,y2),1)
+        C3 = SM3.Hash_sm3('%s%s%s' % (x2, msg, y2), 1)
         return '%s%s%s' % (C1,C3,C2)
 
 def Decrypt(Mii,DA,length):# 解密函数，Mii密文（16进制字符串），DA私钥
@@ -228,7 +229,7 @@ def Decrypt(Mii,DA,length):# 解密函数，Mii密文（16进制字符串），D
     else:
         form = '%%0%dx' % cl
         M = form % (int(C2,16) ^ int(t,16))
-        u = SM3.Hash_sm3('%s%s%s'% (x2,M,y2),1)
+        u = SM3.Hash_sm3('%s%s%s' % (x2, M, y2), 1)
         if  (u == C3):
             return M
         else:

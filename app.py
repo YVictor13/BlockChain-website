@@ -1,40 +1,35 @@
-import os
-from datetime import datetime
-from flask_wtf import FlaskForm
-from sqlalchemy import null
-from wtforms import StringField, SubmitField, PasswordField
-from wtforms.fields.html5 import EmailField
-from wtforms.validators import DataRequired
-from flask import Flask, render_template, request, redirect
 from werkzeug.utils import secure_filename
-from flask import Flask, render_template, jsonify, request, make_response, send_from_directory, abort
-import time
+from flask import send_from_directory
 import os
 from util import Pic_str
-import base64
+from util import Chain
+from util import Block
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template, request, session, redirect, url_for, flash
+from flask import Flask, render_template, request, session, redirect
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456@localhost:3306/block?charset=utf8'
 app.config["SECRET_KEY"] = "12345678"
 db = SQLAlchemy(app)
+c = Chain()
 
 
 # block类
-class Block(db.Model):
+class block(db.Model):
     """block类表"""
-    __tablename__ = "block"
-    previousHash = db.Column(db.String(64), primary_key=True)
+    __tablename__ = "blockchain"
+    previous_hash = db.Column(db.String(64), primary_key=True)
     username = db.Column(db.String(30), nullable=False)
     type = db.Column(db.String(15), nullable=False)
     msg = db.Column(db.String(30), nullable=False)
-    hMsg = db.Column(db.String(64), nullable=False)
+    hmsg = db.Column(db.String(64), nullable=False)
     time_stamp = db.Column(db.String(64), nullable=False)
     nonce = db.Column(db.Integer)
     hash = db.Column(db.String(64), nullable=False)
+    filename = db.Column(db.String(64))
 
 
+#
 # db.drop_all()
 # # 创建所有的表
 # db.create_all()
@@ -89,10 +84,8 @@ def allowed_audio(filename):
 @app.route('/picture')
 def picture():
     # 如果需要存储多个文件，需要将数据库增加一行，用以存储图片名字
-    # obj_list=Block.query.all()   obj_list=obj_list
-    filename = session.get('pictureFilename')
-    session['pictureFilename'] = ''
-    return render_template('picture.html', filename=filename)
+    obj_list = block.query.filter(block.type == 'picture')
+    return render_template('picture.html', obj_list=obj_list)
 
 
 # {{url_for('download',filename=filename)}}
@@ -110,21 +103,18 @@ def api_upload():
         ext = fname.rsplit('.', 1)[1]
         new_filename = Pic_str().create_uuid() + '.' + ext
         # 对图片进行加水印处理
-
-        # 处理结束
-
-        # 图片进行上链处理，并将数据传到数据库
-
+        #     这里是需要你们进行加水印的地方，本地处理，无需上传到前端
         # 处理结束
         print(new_filename)
-        session['pictureFilename'] = new_filename
+        if len(c.list) == 0:
+            c.add_block(Block('MoYu', 'three', 'picture', '0', new_filename))
+        else:
+            c.add_block(Block('MoYu', 'three', 'picture', c.list[len(c.list) - 1].hash, new_filename))
         f.save(os.path.join(file_dir, new_filename))
         # 保存文件地址
         print(file_dir)
-        session['success'] = '上传成功'
         return redirect('/picture')
     else:
-        session['success'] = '上传失败'
         return redirect('/picture')
 
 
@@ -133,7 +123,7 @@ def download(filename):
     if request.method == "GET":
         if os.path.isfile(os.path.join('upload', filename)):
             # 对获取的图片进行解水印处理
-
+            #     在下载之前先将文件去水印
             # 处理结束
             return send_from_directory('upload', filename, as_attachment=True)
         pass
@@ -142,9 +132,8 @@ def download(filename):
 # 上传音频
 @app.route('/audio')
 def audio():
-    filename = session.get('audioFilename')
-    session['audioFilename'] = ''
-    return render_template('audio.html', filename=filename)
+    obj_list = block.query.filter(block.type == 'audio')
+    return render_template('audio.html', obj_list=obj_list)
 
 
 # 上传音频
@@ -164,16 +153,16 @@ def up_audio():
         # 处理结束
 
         # 音频进行上链处理，并将数据传到数据库
-
+        if len(c.list) == 0:
+            c.add_block(Block('MoYu', 'three', 'audio', '0', new_filename))
+        else:
+            c.add_block(Block('MoYu', 'three', 'audio', c.list[len(c.list) - 1].hash, new_filename))
         # 处理结束
         print(new_filename)
-        session['audioFilename'] = new_filename
-        session['success'] = '上传成功'
         f.save(os.path.join(file_dir, new_filename))
         print(file_dir)
         return redirect('/audio')
     else:
-        session['success'] = '上传失败'
         return redirect('/audio')
 
 
@@ -191,10 +180,8 @@ def down_audio(filename):
 # 上传视频
 @app.route('/video')
 def video():
-    # obj_list = Block.query.all()
-    filename = session.get('videoFilename')
-    session['videoFilename'] = ''
-    return render_template('video.html', filename=filename)
+    obj_list = block.query.filter(block.type == 'video')
+    return render_template('video.html', obj_list=obj_list)
 
 
 # 上传视频
@@ -214,9 +201,11 @@ def up_video():
         # 处理结束
 
         # 视频进行上链处理，并将数据传到数据库
-
+        if len(c.list) == 0:
+            c.add_block(Block('MoYu', 'three', 'video', '0', new_filename))
+        else:
+            c.add_block(Block('MoYu', 'three', 'video', c.list[len(c.list) - 1].hash, new_filename))
         # 处理结束
-        session['videoFilename'] = new_filename
         f.save(os.path.join(file_dir, new_filename))
         print(file_dir)
         return redirect('/video')
@@ -237,7 +226,7 @@ def down_video(filename):
 
 @app.route('/table', methods=['GET'])
 def table():
-    obj_list = Block.query.all()
+    obj_list = block.query.all()
     if obj_list:
         return render_template('table.html', obj_list=obj_list)
     return render_template('table.html')

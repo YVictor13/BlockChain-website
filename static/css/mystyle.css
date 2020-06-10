@@ -12,7 +12,7 @@ body {
     width: 100%;
     height: 100%; /* 重点一 */
     margin: 0 auto;
-    background-image: url('../images/bg.jpg');
+    background-image: url('../images/background-image.jpg');
     background-repeat: no-repeat;
     background-size: cover; /* 重点二 */
     overflow: auto;
@@ -130,7 +130,7 @@ form button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #000;
+    color: white;
     font-family:'PingFang SC', 'Microsoft YaHei UI', sans-serif;
 }
 

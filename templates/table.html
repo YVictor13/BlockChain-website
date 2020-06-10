@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
 </head>
 <body>
-<div style="color: white;background-color: rgb(34,34,34);width:100%;height: 1000px;">
+<div style="color: white;background-color: rgb(34,34,34);width:100%;height: 680px;">
     <header id="navigation" class="navbar navbar-inverse" style="z-index: 100;width: 100%">
         <div class="container">
             <div class="navbar-header">
@@ -43,7 +43,7 @@
             </nav>
         </div>
     </header>
-    <table class="table table-striped style">
+    <table class="table table-striped style" style="word-break:break-all">
         <tr style="background-color: #000;">
             <th>previous_hash</th>
             <th>username</th>
@@ -53,17 +53,20 @@
             <th>hash</th>
         </tr>
         {% for item in obj_list %}
-        <tr style="background-color: #000;">
-            <td>{{item.previousHash}}</td>
-            <td>{{item.username}}</td>
-            <td>{{item.type}}</td>
-            <td>{{ item.hmsg }}</td>
-            <td>{{ item.time_stamp }}</td>
-            <td>{{ item.hash }}</td>
-        </tr>
+            <tr style="background-color: #000;">
+                <td>{{ item.previousHash }}</td>
+                <td>{{ item.username }}</td>
+                <td>{{ item.type }}</td>
+                <td>{{ item.hmsg }}</td>
+                <td>{{ item.time_stamp }}</td>
+                <td>{{ item.hash }}</td>
+                <td>{{ item.filename }}</td>
+            </tr>
         {% endfor %}
     </table>
-
+</div>
+<div class="footer" style="margin-top: 0px;">
+    <p class="p1">@2020 Hiddenmark 设计团队：评委最喜欢队</p>
 </div>
 </body>
 </html>

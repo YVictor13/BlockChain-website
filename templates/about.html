@@ -17,7 +17,7 @@
 <body>
 <div style="    background-color: rgba(34,34,34,0.9);
     width: 100%;
-    height: 1000px;font-family:'PingFang SC', 'Microsoft YaHei UI', sans-serif;background-image: url('../static/images/bc_about.jpg');">
+    height: 800px;font-family:'PingFang SC', 'Microsoft YaHei UI', sans-serif;background-image: url('../static/images/bc_about.jpg');display: flex;flex-direction: column;">
 
     <header id="navigation" class="navbar navbar-inverse" style="z-index: 100;width: 100%">
         <div class="container">
@@ -34,11 +34,11 @@
             </div>
             <nav class="collapse navbar-collapse navbar-right" role="Navigation">
                 <ul id="nav" class="nav navbar-nav">
-                    <li ><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('picture') }}">Picture</a></li>
                     <li><a href="{{ url_for('audio') }}">Audio</a></li>
                     <li><a href="{{ url_for('video') }}">Video</a></li>
-                     <li><a href="{{ url_for('table') }}">All</a></li>
+                    <li><a href="{{ url_for('table') }}">All</a></li>
                     <li><a href="{{ url_for('index') }}">Logout</a></li>
                 </ul>
             </nav>
@@ -105,6 +105,9 @@
         </div>
     </div>
 
+    <div class="footer">
+        <p class="p1">@2020 Hiddenmark 设计团队：评委最喜欢队</p>
+    </div>
 </div>
 
 </body>

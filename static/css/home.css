@@ -135,4 +135,19 @@
     }
 }
 
+.footer{
+position: absolute;
+    width: 100%;
+    height: 46px;
+    padding: 0;
+    color: white;
+    text-align: center;
+    background-color: black;
+    margin-top: 679px;
+    opacity: 0.8;
+}
+.p1{
+    padding-top:10px;
+}
+
 

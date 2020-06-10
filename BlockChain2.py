@@ -1,23 +1,12 @@
-# -*-coding:utf-8-*-
-import datetime
 import time
 import hashlib
+import json
 import random
 import threading
 import pymysql
+
 from SM2 import *
 from SM3 import *
-
-
-class Pic_str:
-    def create_uuid(self):  # 生成唯一的图片的名称字符串，防止图片显示时的重名问题
-        nowTime = datetime.datetime.now().strftime("%Y%m%d%H%M%S");  # 生成当前时间
-        randomNum = random.randint(0, 100);  # 生成的随机整数n，其中0<=n<=100
-        if randomNum <= 10:
-            randomNum = str(0) + str(randomNum);
-        uniqueNum = str(nowTime) + str(randomNum);
-        return uniqueNum;
-
 
 conn = pymysql.connect(  # 连接数据库!!!!!!!根据个人数据库调整
     host='localhost',
@@ -135,3 +124,28 @@ class Chain():  # 创建区块链，链起来，参数：区块
     def add_block(self, block):  # 添加区块，需要block
         block.get_data()
         self.list.append(block)
+
+    def show(self):  # 打印所有区块
+        json_res = json.dumps(self.list, default=self.block_dict)
+        with open("chain.txt", "w") as fp:
+            fp.write(json_res)
+        print(json_res)
+
+    def Valid(self):  # 验证
+        for i in range(1, len(self.list)):  # 遍历每一个区块
+            current_block = self.list[i]
+            previous_block = self.list[i - 1]
+            if (current_block.previous_hash != previous_block.hash):
+                print('Previous hash is not eaqual')
+                return False  # 判断存储的上一个hash和上一个hash
+            print('All the blocks are correct')
+            return True
+
+
+if __name__ == '__main__':
+    # pass
+    c = Chain()  # 创建一个区块链
+    c.add_block(Block('tom', 'first', 'picture', '0', 'hhh'))  # 参数：用户名、作品内容、作品类型、前一个hash（除了创世链，都由c.list[len(c.list)-1].hash实现）
+    # c.add_block(Block('may', 'second', 'picture', c.list[len(c.list) - 1].hash, 'xixi'))
+    # c.show()  # 输出json字符串形式的区块链
+    # c.Valid()  # 验证用的，无法在网页体现
